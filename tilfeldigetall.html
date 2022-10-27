@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript tilfeldige tall</title>
+  <style>
+body{
+  background-color: bisque;
+  font-size: 20px;
+}
+
+.mainDiv{
+  margin-top: 20%;
+  display: grid;
+  justify-content: center;
+  background-color: blanchedalmond;
+  height: 150px;;
+}
+#konklusjon{
+  margin-top: 10px;
+  padding-top: 20px; 
+}
+button{
+ margin-bottom: 30px;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="mainDiv">
+    <div id="konklusjon">Tilfeldige Tall: <span id="nummer"></span></div> <br>
+    <button onclick="tilfeldigetall();">Trykk tilfeldige tall</button>
+  </div>
+
+  <script>
+    function tilfeldigetall() {
+      document.getElementById("nummer").innerHTML = randomInt(0, 56);
+    }
+
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  </script>
+</body>
+
+</html>
