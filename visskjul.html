@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisSkjul</title>
+
+    <style>
+ body{
+    background: linear-gradient(90deg, #000, rgb(121, 216, 186), #000);
+    margin-top: 15%;
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+         }   
+         
+ button{
+ border: 2px black solid;
+font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+    <button onclick="visSkjul('bilde')"><b>VIS / SKJUL</b> </button>
+    <div  id="bilde" style="display:none;"><img src="img/stryn3.jpg" alt=""></div>
+
+<script>
+function visSkjul(bilde){
+var chosenID = document.getElementById(bilde);
+if (chosenID.style.display=="none") {
+    chosenID.style.display="";
+} else {
+    chosenID.style.display="none";
+}
+}
+</script>
+
+
+
+
+
+</body>
+</html>
