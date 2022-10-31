@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body{
+    margin: 15%;
+    margin-left: 15%;
+    padding: 0px;
+    background: #1D4350;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+    }
+.conteyner{
+    margin-left: 20%;
+}
+
+
+input[type="button"]{
+width: 200px;
+height: 200px;
+border:none;
+font-size:3em;
+color:#E7E7E7;
+}
+
+#sonuc{
+    
+}
+#azalt{
+    background: #565252;
+}
+#arttir{
+    background: #707270;
+}
+#sonuc{
+    background: #02222a;
+}
+ 
+</style>
+<title>plus minus</title>
+ 
+</head>
+<body>
+    <div class="conteyner">
+        <input id="azalt" type=button onclick="azalt()" value="-">
+        <input type=button id="sonuc" value="0">
+        <input id="arttir" type=button onclick="arttir()" value="+">
+    </div>
+<script>
+
+function arttir(){
+ 
+var sonuc=document.getElementById("sonuc");
+sonuc.value=Number(sonuc.value)+1;
+}
+ 
+function azalt(){
+ 
+var sonuc=document.getElementById("sonuc");
+sonuc.value=Number(sonuc.value)-1;
+}
+ 
+</script>
+</body>
+</html>
