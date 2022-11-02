@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trafikklys</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background: #ADA996;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	
+}
+
+.container {
+	background-color: #2c3e50;
+	border-radius: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 15px 0;
+	height: 500px;
+	width: 150px;
+}
+
+
+.rød {
+    background-color: red;
+    opacity: 10%;
+}
+
+.orange {
+    background-color: orange;
+    opacity: 10%;
+}
+
+.grønn {
+    background-color: green;
+    opacity: 10%;
+}
+
+.cirkle {
+    box-shadow: -5px 10px 20px 10px black inset;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+
+}
+
+.active {
+    opacity: 100%;
+}
+    </style>
+</head>
+
+<body>
+
+
+<div class="container">
+    <div id="trafikklys">
+
+    </div>
+</div>
+    <script>
+        //Model
+        let redOpacity = '';
+        let orangeOpacity = '';
+        let greenOpacity = '';
+
+        //View
+        upDateView()
+        function upDateView() {
+            let HTML = '';
+            HTML += `
+                <div class="rød cirkle ${redOpacity}"></div>
+                <div class="orange cirkle ${orangeOpacity}"></div>
+                <div class="grønn cirkle ${greenOpacity}"></div>  
+        `;
+            document.getElementById('trafikklys').innerHTML = HTML;
+        }
+        //Controller 
+
+        lightController()
+        setInterval(lightController, 5000)
+
+        function redLight() {
+            activeLights('active', '', '')
+        }
+
+        function orangeLight() {
+            activeLights('', 'active', '')
+        }
+        function greenLight() {
+            activeLights('', '', 'active')
+        }
+
+        function redOrangeLight() {
+            activeLights('active', 'active', '')
+        }
+        function activeLights(red, orange, green) {
+            redOpacity = red;
+            orangeOpacity = orange;
+            greenOpacity = green;
+            upDateView()
+        }
+       
+        function lightController() {
+            redLight();
+            setTimeout(redOrangeLight, 2000)
+            setTimeout(greenLight, 3000)
+            setTimeout(orangeLight, 4000)
+            setTimeout(redLight, 5000)
+            upDateView()
+        }
+
+    </script>
+</body>
+
+</html>
