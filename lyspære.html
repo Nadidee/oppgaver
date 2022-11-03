@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyspære</title>
+  
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    
+;
+}
+
+h1.title {
+    text-transform: uppercase;
+    margin-bottom: 10%;
+}
+
+.container {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Click The Lamp</h1>
+        <img src=" img/lightoff.jpg" alt="" id="closeOpen" onclick="slåAvPå()">
+    </div>
+
+
+
+    <script>
+function slåAvPå(){
+    let lamp = document.getElementById('closeOpen');
+
+    if(lamp.src.match('lightoff')){
+        lamp.src = 'img/lighton.jpg';
+       
+       
+        } else {
+        lamp.src = 'img/lightoff.jpg'
+       
+
+       
+        
+    }
+}
+
+    </script>
+</body>
+</html>
