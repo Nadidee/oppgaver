@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+button{
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+
+        }
+
+   
+ 
+
+#container{
+width: 300px;
+height: 300px;
+align-items: center;
+
+}
+
+#bgfarge {
+    width: 100px;
+height: 100px;
+align-items: center;
+position:absolute;
+margin-left: 30px;
+margin-top: 30px;
+
+
+}
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+    <!-- <div id="output"></div>
+
+<div>SELECT FARGE:</div></br>
+
+    <input type="checkbox" id="bir" onchange="bgfarge()">white</input>
+    <input type="checkbox" id="iki" onchange="bgfarge()">black</input>
+    <input type="checkbox" id="uc" onchange="bgfarge()">red</input>
+    <input type="checkbox" id="dort" onchange="bgfarge()">gray</input>
+    <input type="checkbox" id="bes" onchange="bgfarge()">blue</input>
+
+
+<br/><br/><br/>
+
+<div id="container">
+    <div id="bgfarge"></div>
+</div> -->
+
+
+    
+  
+</body>
+<script>
+const outputDiv = document.getElementById('output');
+// model
+
+
+ //view - vise fram HTML med variabeldata
+ drawHTML();
+function drawHTML(){
+    let html = `<div id="output"></div>
+
+<div>SELECT FARGE:</div></br>
+
+    <input type="checkbox" id="bir" onchange="bgfarge()">white</input>
+    <input type="checkbox" id="iki" onchange="bgfarge()">black</input>
+    <input type="checkbox" id="uc" onchange="bgfarge()">red</input>
+    <input type="checkbox" id="dort" onchange="bgfarge()">gray</input>
+    <input type="checkbox" id="bes" onchange="bgfarge()">blue</input>
+
+
+<br/><br/><br/>
+
+<div id="container">
+    <div id="bgfarge"></div>
+</div>`;
+outputDiv.innerHTML = html;
+}
+
+
+
+var contfarge= document.getElementById('container')
+var bgfargeDiv= document.getElementById('bgfarge');
+var chck1= document.getElementById('bir');
+var chck2= document.getElementById('iki');
+var chck3= document.getElementById('uc');
+var chck4= document.getElementById('dort');
+var chck5= document.getElementById('bes');
+
+
+
+
+bgfarge();
+function bgfarge(){
+var chosen1 = chck1.checked;
+var chosen2= chck2.checked;
+var chosen3= chck3.checked;
+var chosen4= chck4.checked;
+var chosen5= chck5.checked;
+
+if (chosen1){
+        bgfargeDiv.innerHTML = `
+        <div id="bgfarge" style="background-color:white"></div>
+        <div id="container" style="background-color:yellow"></div>`;}
+else if (chosen2){ bgfargeDiv.innerHTML = `
+        <div id="bgfarge" style="background-color:black"></div>
+        <div id="container" style="background-color:green"></div>`;
+         }
+ else if (chosen3){ bgfargeDiv.innerHTML = `
+        <div id="bgfarge" style="background-color:red"></div>
+        <div id="container" style="background-color:yellow"></div>`;
+         }
+ else if (chosen4){ bgfargeDiv.innerHTML = `
+        <div id="bgfarge" style="background-color:gray"></div>
+        <div id="container" style="background-color:pink"></div>`;
+         }
+ else if (chosen5){ bgfargeDiv.innerHTML = `
+        <div id="bgfarge" style="background-color:blue"></div>
+        <div id="container" style="background-color:green"></div>`;
+         }
+
+//  if (chosen2 || chosen5){ contfarge.innerHTML =`
+//     <div id="container" style="background-color:green"></div>`;
+// }
+
+// else if (chosen1 || chosen3){
+//     contfarge.innerHTML =`
+//     <div id="container" style="background-color:yellow"></div>`;
+// }
+// else if (chosen4) {contfarge.innerHTML =`
+//     <div id="container" style="background-color:pink"></div>`;
+
+// }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>
