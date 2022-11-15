@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>guessnumber</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gjett Tall</h1>
+    <input type="button" id="start"   value="start game">
+    <input type="button" id="guess"  value="guess" disabled><br><br>
+    <input type="text"  id="tall" placeholder="legg til tall (0-100)">
+<script>
+    var rsayi,cntr,rett=3;
+    var start=document.querySelector("#start");
+    var guess=document.querySelector("#guess");
+    var tall=document.querySelector("#tall");
+    
+    start.onclick=function()
+    {
+        guess.disabled=false;
+        rnumber=Math.round(Math.random()*100);
+        cntr=0;
+        
+    }
+    guess.onclick=function()
+    {
+        cntr++;
+        if(rnumber!=tall.value && cntr>=rett)
+        {
+            window.alert(" 😱  😱  😱 Beklager at det er over");
+            guess.disabled=true;
+        }
+        
+        if(rnumber==tall.value)
+        {
+            window.alert("Gratulerer  🥳 .");
+        }
+        else if(tall.value>rnumber)
+        {
+            window.alert(" 👇  👇  👇 ned");
+        }
+        else
+        {
+            window.alert(" 👆  👆  👆 opp");
+        }
+    }
+</script>
+</body>
+</html>
