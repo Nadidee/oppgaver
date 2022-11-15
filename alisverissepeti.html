@@ -1,0 +1,49 @@
+ 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VOGN</title>
+    <style>
+        input{
+            padding:8px 30px;
+            margin-right:10px;
+        }
+        button{
+            background: #5f27cd;
+            color:#fff;
+            border:none;
+            padding:10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="prdkt"><button id="legg">LEGG TIL NOE</button> <br>
+    <ul id="list">
+    </ul>
+    <script>
+        const prdkt =document.querySelector("#prdkt");
+        const legg =document.querySelector("#legg");
+        const list =document.querySelector("#list");
+
+        // createElement  oluşturulan HTML Elementlerinin sayfaya nasıl ekleneceğini göstermektedir
+        // createElement ile oluşturulan bir HTML elementinin sayfaya eklenmesi için üç yöntem bulunmaktadır. 
+        // Bunlar appendChild(), insertBefore() ve replaceChild() metodlarıdır.
+        // appendChild() metodu parametre olarak aldığı elementi çağrıldığı element içine ekler.
+        // insertBefore() metodu çağrıldığı element altında belirtilen bir elementten önce yeni elementi ekler. 
+        // replaceChild() metodu ise sadece eklemekten ziyade çağrıldığı element altında bir elementi silerek, yerine yenisini ekler.
+    
+        legg.onclick=function(){
+         let li=document.createElement("li"); 
+            li.textContent=prdkt.value;
+  
+            list.appendChild(li);
+ 
+            prdkt.value="";
+            // prdkt.focus();
+        }
+
+      
+    </script>

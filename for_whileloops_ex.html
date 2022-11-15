@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="numbers">
+<div id="display"></div>
+<button onclick="random1()">double tall</button>
+</div> <br><br>
+
+<div class="mainDiv">
+    <div id="konklusjon">Tilfeldige Tall: <span id="nummer"></span></div> <br>
+    <button onclick="tilfeldigetall();">Trykk tilfeldige tall</button>
+  </div><br><br>
+
+  <div class="mainDivTwo">
+    <div id="konklusjonTwo">Tilfeldige Tall: <span id="nummerTwo"></span></div> <br>
+    <button onclick="tilfeldigetallTwo();">Trykk tilfeldige tall 2</button>
+  </div><br><br>
+
+  <div id="equality"></div>
+
+
+  <div id="info"></div>  
+  <div id="number"></div>
+
+
+<script>
+//   var liste = ["Elma", "Armut", "Portakal", "Muz", "Kivi", "Karpuz", "Çilek"];
+//   var i = 0;
+
+//   while(liste[i]) {
+//     alert(liste[i]);
+//     i++;
+//   }
+
+function random1(){
+    let tall= 2;
+    while (tall<=100){
+        tall=tall*2;
+       document.getElementById('display').innerHTML+= tall + ' ';
+    }
+   }
+
+
+   function tilfeldigetall() {
+      document.getElementById('nummer').innerHTML = randomInt(0, 10);
+      
+      
+    }
+function tilfeldigetallTwo() {
+      document.getElementById('nummerTwo').innerHTML = randomInt(0, 10);
+    }
+
+function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }    
+
+//  equal();
+//  function equal()  {
+// while( nummer==nummerTwo){
+//         document.getElementById('equality').innerHTML += "Equal Number found"
+//     }}
+
+
+
+
+
+let people =[
+    {firstName:'lorem', lastName:'lorem1'},
+    {firstName:'nadide', lastName: 'lorem2'},
+    {firstName:'mert', lastName:'lorem3'}
+];
+
+for (let i=0; i<people.length; i++){
+    document.getElementById('info').innerHTML+= (people[i].firstName+ "<br>")
+}
+// for (let i=0; i<people.lenhgth; i++){
+//     document.getElementById('info').innerHTML+= (people[i].firstName);
+// }
+
+
+let numbers= [1,5,6,8,10];
+let num= numbers.map(function(n){
+    return n*n;
+    
+})
+document.getElementById('number').innerHTML+= num
+</script>
+
+</body>
+</html>
