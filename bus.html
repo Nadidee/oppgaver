@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&subset=latin-ext');
+
+* {
+    margin: 0px;
+    padding: 0px ;
+    border: 0px;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+body {
+    font-family: 'Comfortaa', cursive;
+    background: url(arka.jpg);
+    background-size: contain;
+ 
+}
+.container {
+    width: 100%;
+    margin: 100px auto;
+}
+ .car {
+    margin-top: 300px;
+    /* transform: rotate(3deg);
+    transition: 9s; */
+}
+/* .car:hover {
+    transition: 9s;
+    padding-left: 1200px;
+    cursor: pointer;
+} */ */
+/* .way {
+    margin-top: -65px;
+    padding: 20px;
+    background: #333;
+    transform: rotate(2deg);
+} */
+/* .line {
+    display: inline-block;
+    height: 5px;
+    width: 130px;
+    background: #fff;
+} */
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="car" id="car">
+    <img src="arac.png" alt="">
+<!-- <img src="https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/city-car-512.png" alt=""> -->
+
+</div>
+<!-- <div class="line"></div> -->
+
+
+</div>
+</div>
+
+
+<script>
+  var element = document.getElementById('car');
+  var current_margin = 1;
+  setInterval(function(){
+    if(window.innerWidth<=current_margin+100){
+      current_margin = 1;
+    }
+    new_margin = parseInt(current_margin)+1;
+    current_margin = new_margin;
+    element.style.marginLeft = new_margin;
+  },10);
+
+</script>
+
+</body>
+</html>
