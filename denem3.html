@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENEME3</title>
+</head>
+<body>
+<div id="view"></div>
+
+<script>
+// MODELLLL
+let addTxt="";
+
+// VIEWWWW
+updateView();
+function updateView(){
+    let Html="";
+    Html+=`
+    <label for="">skriv her:</label><input type="text" id="text">
+    <button id="buton" onclick="tush()">Add List</button>
+    <ul id="liste"> ${addTxt}</ul>
+    `;
+    document.getElementById('view').innerHTML+=Html;
+}
+
+// CONTROLLLLL
+function tush(){
+    let addList= document.getElementById("liste");
+    let addTxt= document.getElementById("text").value;
+    addList.innerHTML+="<li>"+ addTxt+ "</li>";
+   
+
+   
+}
+
+function reverse(){
+let rvrsTxt= addList.split( '' ).reverse( ).join( '' ); 
+rvrsTxt.innerHTML+="<li>"+ addTxt+ "</li>";
+updateView();
+//  return addList.split( '' ).reverse( ).join( '' );  
+}
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
